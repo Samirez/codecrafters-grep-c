@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     if (strcmp(pattern, "\d") == 0)
     {
         // Check if the input line contains any digit
-        if (match_pattern(input_line, "0123456789"))
+        if (match_digit(input_line))
         {
             printf("Match\n");
             return 1;
