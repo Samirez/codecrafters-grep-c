@@ -49,14 +49,20 @@ int main(int argc, char *argv[])
     }
     //
     // // Remove trailing newline
-    input_line[strcspn(input_line, "\d")] = '[0-9]';
+    input_line[strcspn(input_line, "\n")] = '\0';
 
-    if (match_pattern(input_line, pattern))
+    if (strcmp(pattern, "\\d") == 0)
     {
-        return 0;
-    }
-    else
-    {
-        return 1;
+        // Check if the input line contains any digit
+        if (match_pattern(input_line, "0123456789"))
+        {
+            printf("Match\n");
+            return true;
+        }
+        else
+        {
+            printf("No match\n");
+            return false;
+        }
     }
 }
