@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
         else
         {
             printf("No match\n");
-            return 0;
+            return 1;
         }
     }
 }
