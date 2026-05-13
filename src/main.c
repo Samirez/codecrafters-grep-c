@@ -71,15 +71,21 @@ int main(int argc, char *argv[])
             printf("Match\n");
             return 0;
         }
-        else if (match_pattern(input_line, pattern))
-        {
-            printf("Match\n");
-            return 0;
-        }
         else
         {
             printf("No match\n");
             return 1;
         }
+    }
+
+    if (match_pattern(input_line, pattern))
+    {
+        printf("Match\n");
+        return 0;
+    }
+    else
+    {
+        printf("No match\n");
+        return 1;
     }
 }
