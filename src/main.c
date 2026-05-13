@@ -16,6 +16,18 @@ bool match_pattern(const char *input_line, const char *pattern)
     }
 }
 
+bool math_digit(const char *input_line)
+{
+    for (int i = 0; input_line[i] != '\0'; i++)
+    {
+        if (input_line[i] >= '0' && input_line[i] <= '9')
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main(int argc, char *argv[])
 {
     // Disable output buffering
@@ -51,18 +63,18 @@ int main(int argc, char *argv[])
     // // Remove trailing newline
     input_line[strcspn(input_line, "\n")] = '\0';
 
-    if (strcmp(pattern, "\\d") == 0)
+    if (strcmp(pattern, "\d") == 0)
     {
         // Check if the input line contains any digit
         if (match_pattern(input_line, "0123456789"))
         {
             printf("Match\n");
-            return true;
+            return 1;
         }
         else
         {
             printf("No match\n");
-            return false;
+            return 0;
         }
     }
 }
