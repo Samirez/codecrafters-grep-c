@@ -16,7 +16,7 @@ bool match_pattern(const char *input_line, const char *pattern)
     }
 }
 
-bool math_digit(const char *input_line)
+bool match_digit(const char *input_line)
 {
     for (int i = 0; input_line[i] != '\0'; i++)
     {
@@ -63,18 +63,18 @@ int main(int argc, char *argv[])
     // // Remove trailing newline
     input_line[strcspn(input_line, "\n")] = '\0';
 
-    if (strcmp(pattern, "\d") == 0)
+    if (strcmp(pattern, "\\d") == 0)
     {
         // Check if the input line contains any digit
         if (match_digit(input_line))
         {
             printf("Match\n");
-            return 1;
+            return 0;
         }
         else
         {
             printf("No match\n");
-            return 0;
+            return 1;
         }
     }
 }
