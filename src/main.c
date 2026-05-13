@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     }
     //
     // // Remove trailing newline
-    input_line[strcspn(input_line, "\n")] = '\0';
+    input_line[strcspn(input_line, "\d")] = '[0-9]';
 
     if (match_pattern(input_line, pattern))
     {
